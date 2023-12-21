@@ -32,8 +32,9 @@ const InputBox = () => {
     const autocomplete = async (input) => {
         try {
             const params = new URLSearchParams({ keyword: input.value });
-            const response = await fetch(`http://localhost:8000/api/autocomplete?${params}`);
+            const response = await fetch(`https://seattle-air-line-backend.vercel.app/api/autocomplete?${params}`);
             const data = await response.json();
+            console.log(data);
 
             let options = [];
             let citycode = [];
@@ -67,7 +68,7 @@ const InputBox = () => {
                 departureDate: formatDate(date),
                 adults: '1',
             });
-            const response = await fetch(`http://localhost:8000/api/search?${params}`);
+            const response = await fetch(`https://seattle-air-line-backend.vercel.app/api/search?${params}`);
             const data = await response.json();
             const countries = {
                 destination: 'US',
