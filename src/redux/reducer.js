@@ -6,6 +6,7 @@ const initialState = {
     destination: '',
     arrival: ''
   },
+  selectedAirline: null
 };
 
 const resultReducer = (state = initialState, action) => {
@@ -31,10 +32,23 @@ const countryReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+const airlineReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SELECT_AIRLINE':
+      return {
+        ...state,
+        selectedAirline: action.payload,
+      };
+    default:
+      return state;
+  }
+};
 // Combine the individual reducers into a root reducer
 const rootReducer = combineReducers({
   results: resultReducer,
   contries: countryReducer,
+  airlines: airlineReducer
 });
 
 export default rootReducer;

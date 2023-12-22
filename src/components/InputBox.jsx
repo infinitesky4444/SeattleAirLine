@@ -46,7 +46,6 @@ const InputBox = () => {
             const params = new URLSearchParams({ keyword: input.value });
             const response = await fetch(`https://seattle-air-line-backend.vercel.app/api/autocomplete?${params}`);
             const data = await response.json();
-            console.log(data);
 
             let options = [];
             let citycode = [];
@@ -88,7 +87,6 @@ const InputBox = () => {
                     destination: 'US',
                     arrival: countryCodes[arrive.toLowerCase()]
                 }
-                console.log(countryCodes)
                 dispatch({ type: 'GET_RESULT', payload: data });
                 dispatch({ type: 'GET_COUNTRIES', payload: countries });
                 setResults(data);
