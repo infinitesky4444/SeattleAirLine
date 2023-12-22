@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { carriers } from "../data/carriers";
 
 const ResultBox = () => {
     const result = useSelector(state => state.results.data);
     const countries = useSelector(state => state.contries.contries);
-    console.log(countries);
-
-
     if (result.length > 0) {
         return (
             <>
@@ -34,7 +30,7 @@ const ResultBox = () => {
                                                                 <img src={`https://flagsapi.com/${countries.destination}/flat/32.png`} />
                                                             </div>
                                                             <div className="text-center text-4xl">
-                                                                → 
+                                                                →
                                                             </div>
                                                             <div>
                                                                 {itinerary.segments[0].arrival.iataCode}
@@ -48,7 +44,7 @@ const ResultBox = () => {
                                                 )
                                             }
                                             else {
-                                                return;
+                                                return
                                             }
                                         })
                                     }
@@ -64,14 +60,13 @@ const ResultBox = () => {
         )
     } else {
         return (
-            <>
-                <div className="text-center m-10 bg-teal-500 text-white p-5 text-lg">
+            <div className="p-10">
+                <div className="text-center bg-teal-500 text-white p-5 text-lg">
                     Sorry, No Available Flights
                 </div>
-            </>
+            </div>
         )
     }
 
 }
-
 export default ResultBox;
