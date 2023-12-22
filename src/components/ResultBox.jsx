@@ -19,13 +19,13 @@ const ResultBox = () => {
     }
 
     if (result.length > 0) {
-        if (noDirect) {
-            return (
-                <div className="p-10">
-                    <div className="text-center bg-teal-500 text-white p-5 text-lg">Sorry, No direct flight for your airline</div>
-                </div>
-            )
-        }
+        // if (noDirect) {
+        //     return (
+        //         <div className="p-10">
+        //             <div className="text-center bg-teal-500 text-white p-5 text-lg">Sorry, No direct flight for your airline</div>
+        //         </div>
+        //     )
+        // } else
         return (
             <>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-10">
