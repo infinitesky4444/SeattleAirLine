@@ -1,11 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { carriers } from "../data/carriers";
 
 const ResultBox = () => {
     const result = useSelector(state => state.results.data);
     const countries = useSelector(state => state.contries.contries);
+    const [noDirect, setNoDirect] = useState(true);
+
+    const useEffect = () => {
+        result.map(({ itineraries, index }) => {
+            itineraries.map((itinerary, index) => {
+                if (itinerary.segments.length === 1) {
+                    setNoDirect(false);
+                    return;
+                }
+            })
+        })
+    }
+
     if (result.length > 0) {
+        if (noDirect) {
+            return (
+                <div className="p-10">
+                    <div className="text-center bg-teal-500 text-white p-5 text-lg">Sorry, No direct flight for your airline</div>
+                </div>
+            )
+        }
         return (
             <>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-10">
@@ -67,6 +87,5 @@ const ResultBox = () => {
             </div>
         )
     }
-
 }
 export default ResultBox;
