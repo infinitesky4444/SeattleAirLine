@@ -24,6 +24,8 @@ const ResultBox = () => {
                 else setNoDirect(true);
             }
         }
+
+        dispatch({ type: 'SELECT_AIRLINE', payload: null });
     })
 
     if (result.length > 0) {
@@ -39,7 +41,7 @@ const ResultBox = () => {
             return (
                 <>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-10">
-                        <div className="col-span-2 border shadow-2xl">
+                        <div className="col-span-2 border shadow-2xl h-fit">
                             {result.map(({ itineraries, price, validatingAirlineCodes }, key) => {
                                 const priceLabel = `${price.total} ${price.currency}`;
                                 return (

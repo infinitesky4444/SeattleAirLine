@@ -1,13 +1,42 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 const AirlineInfo = () => {
   const selectedAirline = useSelector(state => state.airlines.selectedAirline);
 
-  console.log(selectedAirline);
+  if (!selectedAirline) {
     return (
-      <div className="">
-
+      <div className="info-box border shadow-xl text-center p-5 text-teal-500 font-bold">
+        Select flight to see more
+      </div>
+    )
+  } else
+    return (
+      <div className=" info-box border shadow-2xl p-5 mt-5 md:mt-0">
+        <div className="flex items-center my-2">
+          <div className="font-bold text-teal-500 text-xl">Departure At:</div>
+          <div className="text-lg ms-5">
+            {new Date(selectedAirline.itineraries[0].segments[0].departure.at).toLocaleString()}
+          </div>
+        </div>
+        <div className="flex items-center my-2">
+          <div className="font-bold text-teal-500 text-xl">Arrive At:</div>
+          <div className="text-lg ms-5">
+            {new Date(selectedAirline.itineraries[0].segments[0].arrival.at).toLocaleString()}
+          </div>
+        </div>
+        <div className="flex items-center my-2">
+          <div className="font-bold text-teal-500 text-xl">Bookable Seats:</div>
+          <div className="text-lg ms-5">
+            {selectedAirline.numberOfBookableSeats} Seats
+          </div>
+        </div>
+        <div className="flex items-center my-2">
+          <div className="font-bold text-teal-500 text-xl">Price:</div>
+          <div className="text-lg ms-5">
+            {selectedAirline.price.total} {selectedAirline.price.currency}
+          </div>
+        </div>
       </div>
     );
 };
