@@ -1,16 +1,15 @@
-import React from "react";
+import React,{ useState } from "react";
 import { useSelector } from "react-redux";
 
 const AirlineInfo = () => {
-    const selectedAirline = useSelector(state => state.airlines.selectedAirline);
+  const selectedAirline = useSelector(state => state.airlines.selectedAirline);
 
-    console.log(selectedAirline);
-  
+  console.log(selectedAirline);
     return (
-      <div className="p-5">
-        
+      <div className="">
+
       </div>
     );
-  };
-  
-  export default AirlineInfo;
+};
+
+export default AirlineInfo;
