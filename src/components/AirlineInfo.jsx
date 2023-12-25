@@ -5,8 +5,6 @@ import { carriers } from "../data/carriers";
 const AirlineInfo = () => {
   const selectedAirline = useSelector(state => state.airlines.selectedAirline);
 
-  console.log(selectedAirline);
-
   if (!selectedAirline) {
     return (
       <div className="info-box border shadow-xl text-center p-5 text-teal-500 font-bold">
