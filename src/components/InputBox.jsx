@@ -159,22 +159,24 @@ const InputBox = () => {
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1v3m5-3v3m5-3v3M1 7h18M5 11h10M2 3h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" />
                                 </svg>
                             </span>
-                            <DatePicker
-                                id="datepicker"
-                                selected={date}
-                                onChange={handleDate}
-                                className="
-                            rounded-none rounded-e-lg 
-                            bg-gray-50 
-                            border border-gray-300 
-                            text-gray-900 text-sm 
-                            focus:ring-blue-500 focus:border-blue-500 
-                            block p-2.5 mx-auto
-                            dark:bg-gray-700 dark:border-gray-600 
-                            dark:placeholder-gray-400 dark:text-white 
-                            dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                dateFormat="dd/MM/yyyy"
-                            />
+                            <div className="w-full">
+                                <DatePicker
+                                    id="datepicker"
+                                    selected={date}
+                                    onChange={handleDate}
+                                    className="
+                                    rounded-none rounded-e-lg 
+                                    bg-gray-50 
+                                    border border-gray-300 
+                                    text-gray-900 text-sm 
+                                    focus:ring-blue-500 focus:border-blue-500 
+                                    block p-2.5 mx-auto w-full lg:w-80
+                                    dark:bg-gray-700 dark:border-gray-600 
+                                    dark:placeholder-gray-400 dark:text-white 
+                                    dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    dateFormat="dd/MM/yyyy"
+                                />
+                            </div>
                         </div>
                         {errorDate ? <div className="text-sm text-red text-center">Destination Date can't be previous day</div> : ''}
                     </div>
