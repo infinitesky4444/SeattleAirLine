@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { carriers } from "../data/carriers";
 
@@ -45,6 +45,14 @@ const AirlineInfo = () => {
           <div className="font-bold text-teal-500 text-xl">Last Ticketing Date:</div>
           <div className="text-lg ms-5">
             {new Date(selectedAirline.lastTicketingDate).toLocaleString()}
+          </div>
+        </div>
+
+        <div className="flex">
+          <div className="mx-auto">
+            <button className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded my-6">
+              Book Now
+            </button>
           </div>
         </div>
       </div>

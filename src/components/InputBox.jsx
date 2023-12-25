@@ -1,8 +1,8 @@
-import React, { useState, useEffect, use } from "react";
+import React, { useState } from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.module.css';
 import { LocationMarkerIcon } from '@heroicons/react/solid';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const InputBox = () => {
     const [arrive, setArrive] = useState('');
