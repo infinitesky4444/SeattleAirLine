@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { carriers } from "../data/carriers";
+import QuestionModal from "./QuestionModal";
 
 const AirlineInfo = () => {
   const selectedAirline = useSelector(state => state.airlines.selectedAirline);
@@ -48,11 +49,9 @@ const AirlineInfo = () => {
           </div>
         </div>
 
-        <div className="flex">
+        <div className="flex mt-10">
           <div className="mx-auto">
-            <button className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded my-6">
-              Book Now
-            </button>
+            <QuestionModal />
           </div>
         </div>
       </div>
