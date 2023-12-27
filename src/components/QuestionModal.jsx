@@ -6,7 +6,7 @@ const QuestionModal = () => {
         <>
             <button
                 className="bg-teal-300 text-black active:bg-teal-500 
-      font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
+                    font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none"
                 type="button"
                 onClick={() => setShowModal(true)}
             >
